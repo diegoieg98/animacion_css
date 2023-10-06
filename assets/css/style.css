@@ -9,7 +9,12 @@ nav img{
     width: 50px;
 }
 /* main */
-
+main img{
+    width: 90%;
+}
+main button{
+    width: 60px;
+}
 /* footer */
 footer img{
     width: 50px;
