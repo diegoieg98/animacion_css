@@ -74,6 +74,43 @@ footer{
     flex-direction: column;
     height: 100px;
 }
+/* tablet version */
+@media (min-width:576px){
+    .grid{
+        display: grid;
+        grid-template-areas: 
+        "nav main"
+        "nav main"
+        "footer main";
+        grid-template-columns: 20% 80%;
+        grid-template-rows: 3fr auto;
+    }
+    /* nav */
+    nav{
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        text-align: center;
+        padding: 30px;
+        min-height: 100%;
+    }
+    /* main */
+    .cards{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .card{
+        display: flex;
+        width: 45%;
+    }
+    footer{
+        text-align: center;
+        height: 150px;
+    }
+}
 /* desktop version */
 @media (min-width:992px){
     .grid{
@@ -87,10 +124,11 @@ footer{
     /* nav */
     nav{
         display: flex;
-        flex-wrap: wrap;
-        justify-content: start;
-        text-align: center;
+        flex-wrap: nowrap;
         flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        text-align: center;
         padding: 30px;
         min-height: 100%;
     }
