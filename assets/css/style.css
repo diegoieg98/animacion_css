@@ -181,7 +181,7 @@ footer div{
     .grid{
         display: grid;
         grid-template-areas: 
-        "nav section"
+        "nav nav"
         "main section"
         "footer footer";
         grid-template-columns: 20% auto;
