@@ -1,29 +1,55 @@
 *{
     margin: 0%;
     padding: 0%;
-    font-family: 'Poiret One', cursive;
+    font-family: 'Montserrat', sans-serif;
 }
 /* general */
 h1 h2{
     font-weight: 500;
 }
 /* nav */
-nav img{
-    width: 50px;
-    padding-right: 20px;
-}
 nav{
     grid-area: nav;
     background-color: darkgreen;
     color: azure;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     height: 100px;
+}
+nav img{
+    width: 50px;
+    padding-right: 20px;
+    animation: 1s linear 1s infinite alternate camera;
+}
+@keyframes camera{
+    from{
+        transform: translateX(30px);
+    }
+    to{
+        transform: translateX(80);
+    }
 }
 /* main */
 main{
     grid-area: main;
+    background-color: rgb(143, 255, 174);
+    height: 150px;
+    display: flex;
+    justify-content: space-around;
+}
+main h4{
+    display: flex;
+    align-items: center;
+    transition: all 2s;
+}
+main h4:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+/* section */
+section{
+    grid-area: section;
     background-color: rgb(68, 159, 88);
     color: azure;
     display: flex;
@@ -31,7 +57,7 @@ main{
     align-items: center;
     padding: 30px;
 }
-main h2{
+section h1{
     padding-bottom: 20px;
 }
 .card{
@@ -57,12 +83,14 @@ main h2{
 }
 .card button{
     border-radius: 5px;
-    width: 100px;
+    width: 30%;
     height: 35px;
 }
 .button{
     display: flex;
-    flex-wrap: nowrap;
+    align-items: center;
+    width: 100%;
+    justify-content: space-around;
     padding: 20px;
 }
 .button img{
@@ -82,16 +110,19 @@ footer{
     flex-direction: column;
     height: 100px;
 }
+footer div{
+    padding-bottom: 10px;
+}
 /* tablet version */
 @media (min-width:576px){
     .grid{
         display: grid;
         grid-template-areas: 
-        "nav main"
-        "nav main"
-        "footer main";
-        grid-template-columns: 20% 80%;
-        grid-template-rows: 3fr auto;
+        "nav section"
+        "main section"
+        "footer footer";
+        grid-template-columns: 25% 75%;
+        grid-template-rows: auto 1fr 15%;
     }
     /* nav */
     nav{
@@ -101,10 +132,23 @@ footer{
         justify-content: start;
         align-items: center;
         text-align: center;
+        height: 200px;
         padding: 30px;
-        min-height: 100%;
     }
     /* main */
+    main{
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+        background-color: rgb(143, 255, 174);
+    }
+    main h4{
+        padding-top: 30px;
+    }
+    /* section */
     .cards{
         display: flex;
         flex-wrap: wrap;
@@ -116,6 +160,16 @@ footer{
     }
     .card img:hover{
         transform: scale(1.1);
+    }
+    .card button{
+        width: 30%;
+    }
+    .button{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-around;
+        padding: 20px;
     }
     /* footer */
     footer{
@@ -129,6 +183,7 @@ footer{
         display: grid;
         grid-template-areas: 
         "nav main"
+        "nav section"
         "footer footer";
         grid-template-columns: 20% auto;
         grid-template-rows: 80% auto;
@@ -148,6 +203,19 @@ footer{
         width: 60px;
     }
     /* main */
+    main{
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        align-items: center;
+        background-color: rgb(143, 255, 174);
+        color: black;
+        height: 100px;
+    }
+    main h4{
+        padding-right: 40px;
+    }
+    /* section */
     .cards{
         display: flex;
         flex-wrap: wrap;
@@ -155,17 +223,25 @@ footer{
     }
     .card{
         width: 30%;
+        background-color: rgb(49, 188, 95);
     }
     .card img:hover{
         transform: scale(1.1);
     }
     .card button{
-        width: 80%;
+        width: 40%;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        text-align: justify;
+        text-align: center;
+        padding: 20px;
+    }
+    .button{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-around;
         padding: 20px;
     }
     /* footer */
