@@ -181,8 +181,8 @@ footer div{
     .grid{
         display: grid;
         grid-template-areas: 
-        "nav main"
         "nav section"
+        "main section"
         "footer footer";
         grid-template-columns: 20% auto;
         grid-template-rows: auto 5fr auto;
@@ -190,9 +190,9 @@ footer div{
     /* nav */
     nav{
         display: flex;
-        flex-wrap: nowrap;
-        flex-direction: column;
-        justify-content: start;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
         align-items: center;
         text-align: center;
         padding: 30px;
@@ -204,15 +204,16 @@ footer div{
     /* main */
     main{
         display: flex;
-        flex-direction: row;
-        justify-content: end;
+        flex-direction: column;
+        justify-content: start;
         align-items: center;
         background-color: rgb(143, 255, 174);
         color: black;
-        height: 100px;
+        padding-top: 20px;
+        min-height: 100%;
     }
-    main h4{
-        padding-right: 40px;
+    main a{
+        padding: 20px;
     }
     /* section */
     .cards{
